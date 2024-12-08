@@ -1,8 +1,8 @@
 package com.example.bookManagment.controller;
 
-import com.example.bookManagment.dto.requestDto.CustomerRequest;
-import com.example.bookManagment.dto.responseDto.CustomerResponse;
-import com.example.bookManagment.service.CustomerService;
+import com.example.bookManagment.dto.requestDto.PersonRequest;
+import com.example.bookManagment.dto.responseDto.PersonResponse;
+import com.example.bookManagment.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/customer")
-public class CustomerController {
-
+@RequestMapping("/person")
+public class PersonController {
     @Autowired
-    CustomerService customerService;
+    PersonService personService;
+    @PostMapping("/add")
 
-    @PostMapping("/adding")
-    public ResponseEntity addCustomer( @RequestBody CustomerRequest customerRequest){
-        CustomerResponse response=customerService.addCustomer(customerRequest);
+    public ResponseEntity addPerson(@RequestBody PersonRequest personRequest){
+        PersonResponse response=personService.addPerson(personRequest);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 }
