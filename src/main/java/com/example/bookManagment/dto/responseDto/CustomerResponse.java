@@ -1,4 +1,4 @@
-package com.example.bookManagment.dto.requestDto;
+package com.example.bookManagment.dto.responseDto;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -7,16 +7,9 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-
-
-public class BookRequest {
-
-
+@Builder
+public class CustomerResponse {
     String name;
-
-    String authorName;
-
-    String authorEmail;
-
-    int pages;
+    String mobileNo;
+    String email;
 }
